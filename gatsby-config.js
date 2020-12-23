@@ -30,7 +30,17 @@ module.exports = {
 
     // My plugins
     'gatsby-plugin-postcss',
-    `gatsby-plugin-netlify-cms`
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svgs/
+        }
+      }
+    },
+
+    
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
