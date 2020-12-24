@@ -27,6 +27,16 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Lora`,
+          `Montserrat` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }
 
     
     
