@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import FluidImage from "../components/fluid-image"
 import FixedImage from "../components/fixed-image"
+import { MenuItem, MenuTitle, MenuSubtitle } from "../components/menu-item"
 
 import Content from "../components/content"
 import SEO from "../components/seo"
@@ -22,8 +23,8 @@ const IndexPage = () => (
 
 
     <div class="relative ">
-        <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh"}}>
-        </FluidImage>
+      <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh"}}>
+      </FluidImage>
       
       <div style={{transform: 'translate(-50%, -50%)'}}  class="text-right absolute z-10 top-1/2 left-1/2 text-white">
         <h1>
@@ -35,9 +36,8 @@ const IndexPage = () => (
       </div>
     </div>
     
-    <div class="relative">
-
-      <div class="z-10 absolute my-20 mx-4 xl:mx-20 grid grid-cols-1 lg:grid-cols-8 ">
+    <div class="relative p-4  my-20 ">
+      <div class="lg:w-3/4 lg:mx-auto h-full grid grid-cols-1 lg:grid-cols-8 ">
         <p class="text-2xl font-montserrat lg: text-3xl lg:col-span-4 lg:col-start-2 lg:transform z-10 lg:bg-white  ">
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
@@ -47,19 +47,30 @@ const IndexPage = () => (
         <p class="font-serif lg:text-xl lg:row-start-2 lg:col-start-2 lg:col-span-3 lg:transform  lg:bg-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
         </p>
-        <p class=" font-montserrat text-4xl lg:text-5xl lg:row-start-4 lg:col-span-2 lg:col-start-6 lg:transform lg:-translate-y-36 lg:bg-white">
+        <p class=" font-montserrat text-4xl mt-4 lg:text-5xl lg:row-start-4 lg:col-span-2 lg:col-start-6 lg:transform lg:-translate-y-36 lg:bg-white">
         consectetur adipiscing elit.
         </p>
-      </div>
-
-      <div class="absolute w-screen my-20 px-4 xl:px-20 grid grid-cols-1 lg:grid-cols-8 transform translate-y-40">
-        <div class="col-span-3 col-start-6">
+        <div class="lg:col-span-3 lg:col-start-6 lg:row-start-3">
           <FluidImage imageName="img2.jpg" />
-          </div>
+        </div>
       </div>
-
-
     </div>
+
+    <div style={{backgroundColor: '#9DAF94'}} class="p-4 lg:py-40">
+      <div class="lg:w-1/2 lg:mx-auto  my-20">
+      <MenuTitle title="Menu" />
+      <MenuSubtitle subtitle="Breakfast" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuSubtitle subtitle="Coffee" />
+      <MenuItem item1="Cappucino" />
+      <MenuItem item1="Latte"/>
+      </div>
+    </div>
+
 
 
 
