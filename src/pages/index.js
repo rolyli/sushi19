@@ -14,6 +14,7 @@ import Elipse from "../svgs/elipse.svg"
 import { scale } from '../utils/typography'
 
 
+
 const IndexPage = () => (
 
   
@@ -60,14 +61,13 @@ const IndexPage = () => (
       <div class="lg:w-1/2 lg:mx-auto">
       <MenuTitle title="Menu" />
       <MenuSubtitle subtitle="Breakfast" />
-      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
-      <MenuItem item1="Tomato Soup" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
-      <MenuItem item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
-      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
-      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
+      <MenuItem item1="Tomato Soup" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
+      <MenuItem item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
       <MenuSubtitle subtitle="Coffee" />
       <MenuItem item1="Cappucino" />
       <MenuItem item1="Latte"/>
+      <MenuItem item1="Milk :)"/>
       </div>
     </div>
   </ Layout>

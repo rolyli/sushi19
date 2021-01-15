@@ -36,7 +36,8 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+    `gatsby-plugin-emotion`,
 
     
     
