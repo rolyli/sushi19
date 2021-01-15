@@ -13,6 +13,7 @@ import Elipse from "../svgs/elipse.svg"
 
 import { scale } from '../utils/typography'
 
+import { css, cx } from '@emotion/css'
 
 
 const IndexPage = () => (
@@ -48,7 +49,18 @@ const IndexPage = () => (
         <p class="z-20 font-serif lg:text-xl lg:row-start-2 lg:col-start-2 lg:col-span-3 lg:bg-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
         </p>
-        <p class="z-20 font-montserrat text-4xl mt-4 lg:text-5xl lg:row-start-4 lg:col-span-2 lg:col-start-6 scale-125 lg:bg-white">
+        <p class={cx(css`
+          :after {
+            display: inline-block;
+            content: "";
+            border-top: .1rem solid black;
+            width: 100%;
+            transform: translateY(-1rem);
+          }
+        `, `z-20 font-montserrat text-4xl mt-4 lg:text-5xl lg:row-start-4 lg:col-span-2 lg:col-start-6 scale-125 lg:bg-white`
+          )}
+          
+        >
         consectetur adipiscing elit.
         </p>
         <div class="lg:col-span-3 lg:col-start-6 lg:row-start-3">
@@ -57,11 +69,19 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div style={{backgroundColor: '#9DAF94'}} class="p-4 xl:py-36">
+    <div style={{backgroundColor: '#9DAF94'}} class="p-4 xl:py-36 py-24 relative">
+
+      <div class="invisible xl:visible absolute top-0 left-0 text-white text-9xl">+</div>
+      <div class="absolute  top-0 right-0 text-white text-9xl">+</div>
+      <div class="invisible absolute xl:visible bottom-0 left-0 text-white text-9xl">+</div>
+      <div class="invisible absolute xl:visible bottom-0 right-0 text-white text-9xl">+</div>
+
+      
       <div class="xl:w-3/4 xl:mx-auto">
-        <div class="my-10 xl:mb-15">
-          <p class="text-white font-serif text-7xl">Helvetica</p>
-          <p class="lg:ml-16 text-white font-serif text-7xl">Menu</p>
+        
+        <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-7xl border-2">
+          <p class="">Helvetica</p>
+          <div class="">Menu</div>
         </div>
 
         <div class="grid grid-cols-1 xl:grid-cols-6 ">

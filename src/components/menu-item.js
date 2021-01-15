@@ -4,11 +4,11 @@ import { css, cx } from '@emotion/css'
 
 const MenuItem = ({item1, item2, className, divide}) => {
     return (
-    <div class={`${className} grid grid-cols-4 gap-4 ${divide? 'divide-x divide-white': ""}`}>
-        <div class="font-montserrat text-white text-left text-lg pb-4">
+    <div class={`${className}`}>
+        <div class="font-montserrat text-white text-left text-lg pb-2 uppercase">
             {item1}
         </div>
-        <div class="font-montserrat text-white text-left text-lg pl-4 pb-4 col-span-3">
+        <div class="font-montserrat text-white text-left text-lg pb-6">
             {item2}
         </div>
     </div>
