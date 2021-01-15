@@ -4,17 +4,25 @@ import { css, cx } from '@emotion/css'
 
 const MenuItem = ({item1, item2, className, divide}) => {
     return (
-    <div class={`${className} grid grid-cols-2 ${divide? 'divide-x divide-white': ""}`}>
-        <div class="font-montserrat text-white text-left text-xl pb-4">
+    <div class={`${className} grid grid-cols-4 gap-4 ${divide? 'divide-x divide-white': ""}`}>
+        <div class="font-montserrat text-white text-left text-lg pb-4">
             {item1}
         </div>
-        <div class="font-montserrat text-white text-left text-xl pl-4 pb-4 ">
+        <div class="font-montserrat text-white text-left text-lg pl-4 pb-4 col-span-3">
             {item2}
         </div>
     </div>
 )}
 
-const MenuTitle = ({title, className}) => {
+const MenuEl = ({ item1 }) => {
+    return (
+        <p class="font-montserrat text-white text-left text-lg pb-4">
+            {item1}
+        </p>
+    )
+}
+
+const MenuTitle = ({title, className, children}) => {
     return (
         <div className={cx(`${className} font-serif text-white text-center text-5xl mb-12 `, css`
             :before,
@@ -27,7 +35,7 @@ const MenuTitle = ({title, className}) => {
             }
         `)}
         >
-            {title}
+            {title}{children}
         </div>
     )
 }
@@ -45,5 +53,6 @@ const MenuSubtitle = ({subtitle, className}) => {
 export {
     MenuItem,
     MenuTitle,
-    MenuSubtitle
+    MenuSubtitle,
+    MenuEl
 }

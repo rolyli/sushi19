@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import FluidImage from "../components/fluid-image"
 import FixedImage from "../components/fixed-image"
-import { MenuItem, MenuTitle, MenuSubtitle } from "../components/menu-item"
+import { MenuItem, MenuTitle, MenuSubtitle, MenuEl } from "../components/menu-item"
 
 import Content from "../components/content"
 import SEO from "../components/seo"
@@ -57,17 +57,35 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div style={{backgroundColor: '#9DAF94'}} class="p-4 lg:py-40">
-      <div class="lg:w-1/2 lg:mx-auto">
-      <MenuTitle title="Menu" />
-      <MenuSubtitle subtitle="Breakfast" />
-      <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
-      <MenuItem item1="Tomato Soup" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
-      <MenuItem item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
-      <MenuSubtitle subtitle="Coffee" />
-      <MenuItem item1="Cappucino" />
-      <MenuItem item1="Latte"/>
-      <MenuItem item1="Milk :)"/>
+    <div style={{backgroundColor: '#9DAF94'}} class="p-4 xl:py-36">
+      <div class="xl:w-3/4 xl:mx-auto">
+        <div class="my-10 xl:mb-15">
+          <p class="text-white font-serif text-7xl">Helvetica</p>
+          <p class="lg:ml-16 text-white font-serif text-7xl">Menu</p>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-6 ">
+          <div>
+          <MenuSubtitle subtitle="Coffee" />
+          <MenuEl item1="Cappucino" />
+          <MenuEl item1="Latte"/>
+          <MenuEl item1="Americano"/>
+          </div>
+
+          <div>
+          <MenuSubtitle subtitle="Tea" />
+          <MenuEl item1="Helvetica Blend :)" />
+          <MenuEl item1="Oolong"/>
+          <MenuEl item1="Milk tea"/>
+          </div>
+
+          <div class="xl:col-span-4">
+          <MenuSubtitle subtitle="Breakfast" />
+          <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
+          <MenuItem item1="Tomato Soup" item2="quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat" divide />
+          <MenuItem item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
+          </div>
+        </div>
       </div>
     </div>
   </ Layout>
