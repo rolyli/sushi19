@@ -84,7 +84,9 @@ const IndexPage = () => (
           <div class="">Menu</div>
         </div>
 
-        <div class="grid grid-cols-1 xl:grid-cols-6 ">
+        <div   data-sal="slide-up"
+        data-sal-duration="1000"
+  data-sal-easing="ease" class="grid grid-cols-1 xl:grid-cols-6 ">
           <div>
           <MenuSubtitle subtitle="Coffee" />
           <MenuEl item1="Cappucino" />

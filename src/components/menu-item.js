@@ -16,7 +16,7 @@ const MenuItem = ({item1, item2, className, divide}) => {
 
 const MenuEl = ({ item1 }) => {
     return (
-        <p class="font-montserrat text-white text-left text-lg pb-4">
+        <p class="font-montserrat uppercase text-white text-left text-lg pb-4">
             {item1}
         </p>
     )
