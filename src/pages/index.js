@@ -1,18 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import FluidImage from "../components/fluid-image"
-import FixedImage from "../components/fixed-image"
 import { MenuItem, MenuTitle, MenuSubtitle, MenuEl } from "../components/menu-item"
-
-import Content from "../components/content"
 import SEO from "../components/seo"
-
-import Elipse from "../svgs/elipse.svg"
-
-import { scale } from '../utils/typography'
-
 import { css, cx } from '@emotion/css'
 
 
@@ -28,28 +18,30 @@ const IndexPage = () => (
       <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh"}}>
       </FluidImage>
       
-      <div style={{transform: 'translate(-50%, -50%)'}}  class="text-right absolute z-10 top-1/2 left-1/2 text-white">
+      <div class="text-right absolute z-10 top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2">
         <h1>
-          <span class="block font-montserrat text-left uppercase text-xs lg:text-3xl ml-4 lg:ml-24">Cafe Restaurant</span>
-          <span class="block mb-2 font-serif text-5xl p-2 mr-4 mt-2 xl:mr-16 lg:text-9xl bg-gray-200 bg-opacity-30">HELVETICA</span>
-          <span class="block font-serif text-5xl ml-4 p-2 xl:ml-16 lg:text-9xl bg-gray-500 bg-opacity-30">STANDARD</span>
-          <span class="block font-montserrat mt-2 text-sm lg:text-4xl lg:mr-24">Duis aute irure dolor in</span>
+          <span class="block mb-3 font-serif text-5xl lg:text-9xl ">HELVETICA</span>
+          <span class="block font-serif text-5xl lg:text-9xl ">STANDARD</span>
         </h1>
       </div>
     </div>
     
     <div class="relative p-4 my-20 ">
       <div class="lg:w-3/4 lg:mx-auto h-full grid grid-cols-1 lg:grid-cols-8 ">
-        <p class="z-20 text-2xl font-montserrat lg: text-3xl lg:col-span-4 lg:col-start-2 lg:transform  lg:bg-white">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <div class="z-10 row-start-2 lg:row-start-3 lg:col-span-4 lg:col-start-3 lg:transform lg:scale-110   ">
+        <div data-sal="slide-up" data-sal-duration="1000" class="lg:col-span-4 lg:col-start-2 z-20 lg:bg-white lg:p-8">
+          <p class="z-20 text-2xl font-serif lg:text-3xl">
+            Excepteur sint occaecat cupidatat non proident
+          </p>
+          <p class="font-montseratt lg:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
+          </p>
+        </div>
+
+        <div  class="z-10 row-start-2 lg:row-start-3 lg:col-span-4 lg:col-start-3 lg:transform lg:scale-110   ">
         <FluidImage imageName="img1.jpg"/>
         </div>
-        <p class="z-20 font-serif lg:text-xl lg:row-start-2 lg:col-start-2 lg:col-span-3 lg:bg-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
-        </p>
-        <p class={cx(css`
+
+        <p  data-sal="slide-up" data-sal-duration="1000" class={cx(css`
           :after {
             display: inline-block;
             content: "";
@@ -63,7 +55,7 @@ const IndexPage = () => (
         >
         consectetur adipiscing elit.
         </p>
-        <div class="lg:col-span-3 lg:col-start-6 lg:row-start-3">
+        <div   class="lg:col-span-3 lg:col-start-6 lg:row-start-3">
           <FluidImage imageName="img2.jpg" />
         </div>
       </div>
@@ -77,35 +69,34 @@ const IndexPage = () => (
       <div class="invisible absolute xl:visible bottom-0 right-0 text-white text-9xl">+</div>
 
       
-      <div class="xl:w-3/4 xl:mx-auto">
+      <div class="xl:mx-20">
         
         <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-7xl border-2">
           <p class="">Helvetica</p>
           <div class="">Menu</div>
         </div>
 
-        <div   data-sal="slide-up"
-        data-sal-duration="1000"
-  data-sal-easing="ease" class="grid grid-cols-1 xl:grid-cols-6 ">
-          <div>
+        <div class="grid grid-cols-1 xl:grid-cols-6 ">
+          <div class="xl:col-span-2">
           <MenuSubtitle subtitle="Coffee" />
-          <MenuEl item1="Cappucino" />
-          <MenuEl item1="Latte"/>
-          <MenuEl item1="Americano"/>
-          </div>
-
-          <div>
-          <MenuSubtitle subtitle="Tea" />
-          <MenuEl item1="Helvetica Blend :)" />
-          <MenuEl item1="Oolong"/>
-          <MenuEl item1="Milk tea"/>
+          <MenuEl price="2.30" item1="Cappucino" />
+          <MenuEl price="2.20" item1="Latte"/>
+          <MenuEl price="2.00" item1="Americano"/>
+          <MenuEl price="2.50" item1="Flat White" />
+          <MenuEl price="3.00" item1="Mocha" />
+          <MenuEl price="2.20" item1="Iced Coffee" />
+          <MenuSubtitle subtitle="Tea"  className="mt-5" />
+          <MenuEl price="1.50" item1="Helvetica Blend" />
+          <MenuEl price="1.50" item1="Oolong"/> 
+          <MenuEl price="2.00" item1="Milk tea"/>
           </div>
 
           <div class="xl:col-span-4">
-          <MenuSubtitle subtitle="Breakfast" />
-          <MenuItem item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
-          <MenuItem item1="Tomato Soup" item2="quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat" divide />
-          <MenuItem item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" divide />
+          <MenuSubtitle subtitle="Brunch" />
+          <MenuItem price="5.30" item1="Full Breakfast" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" />
+          <MenuItem price="4.00" item1="Bacon Sandwich" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"  />
+          <MenuItem vegan price="3.80" item1="Tomato Soup" item2="quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat" />
+          <MenuItem price="3.50" item1="Omelette" item2="incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"  />
           </div>
         </div>
       </div>

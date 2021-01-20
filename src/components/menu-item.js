@@ -2,23 +2,30 @@ import React from 'react'
 import { css, cx } from '@emotion/css'
 
 
-const MenuItem = ({item1, item2, className, divide}) => {
+const MenuItem = ({item1, item2, price, className, vegan}) => {
     return (
     <div class={`${className}`}>
-        <div class="font-montserrat text-white text-left text-lg pb-2 uppercase">
-            {item1}
+        <div class="font-montserrat text-white text-left text-lg mb-2 uppercase">
+            <span class="float-left">{item1} {vegan && '(v)'}</span>
+            <span class='float-right'>£{price}</span>
         </div>
-        <div class="font-montserrat text-white text-left text-lg pb-6">
+        <div class="font-montserrat text-white text-left text-lg mb-6">
+            <br/>
             {item2}
         </div>
     </div>
 )}
 
-const MenuEl = ({ item1 }) => {
+const MenuEl = ({ className, item1, price }) => {
     return (
-        <p class="font-montserrat uppercase text-white text-left text-lg pb-4">
-            {item1}
-        </p>
+        <div class="font-montserrat text-white text-left text-lg mb-2 xl:mr-20 uppercase">
+            <span class="float-left">{item1}</span>
+            <span class='float-right'>£{price}</span>
+            <br/>
+
+        </div>
+
+        
     )
 }
 
@@ -42,7 +49,7 @@ const MenuTitle = ({title, className, children}) => {
 
 const MenuSubtitle = ({subtitle, className}) => {
     return (
-        <div class={`${className} text-left font-serif text-white text-3xl mb-4`}>
+        <div class={`${className} font-serif text-white text-3xl mb-4`}>
             {subtitle}
         </div>
     )
