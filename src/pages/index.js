@@ -4,6 +4,7 @@ import FluidImage from "../components/fluid-image"
 import { MenuItem, MenuTitle, MenuSubtitle, MenuEl } from "../components/menu-item"
 import SEO from "../components/seo"
 import { css, cx } from '@emotion/css'
+import Navbar from "../components/navbar"
 
 
 const IndexPage = () => (
@@ -11,33 +12,44 @@ const IndexPage = () => (
   
  <Layout>
     <SEO title="Home" />
-
-
-
     <div class="relative ">
-      <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh"}}>
+    <Navbar />
+    <div class={css`
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, rgba(0,0,0,0.5) 100%);
+      `}>
+      </div>
+      <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh", }}>
       </FluidImage>
       
       <div class="text-right absolute z-10 top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2">
         <h1>
-          <span class="block mb-3 font-serif text-5xl lg:text-9xl ">HELVETICA</span>
-          <span class="block font-serif text-5xl lg:text-9xl ">STANDARD</span>
+          <span class="block mb-3 font-serif text-5xl xl:text-9xl ">HELVETICA</span>
+          <span class="block font-serif text-5xl xl:text-9xl ">STANDARD</span>
         </h1>
       </div>
     </div>
     
     <div class="relative p-4 my-20 ">
-      <div class="lg:w-3/4 lg:mx-auto h-full grid grid-cols-1 lg:grid-cols-8 ">
-        <div data-sal="slide-up" data-sal-duration="1000" class="lg:col-span-4 lg:col-start-2 z-20 lg:bg-white lg:p-8">
-          <p class="z-20 text-2xl font-serif lg:text-3xl">
+      <div class="xl:w-3/4 xl:mx-auto h-full grid grid-cols-1 xl:grid-cols-8 ">
+        <div data-sal="slide-up" data-sal-duration="1000" class="xl:col-span-4 xl:col-start-2 z-20 xl:bg-white xl:p-8">
+          <p class="z-20 text-2xl font-serif xl:text-4xl mb-1">
             Excepteur sint occaecat cupidatat non proident
           </p>
-          <p class="font-montseratt lg:text-xl">
+          <p class="font-montseratt xl:text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
           </p>
         </div>
 
-        <div  class="z-10 row-start-2 lg:row-start-3 lg:col-span-4 lg:col-start-3 lg:transform lg:scale-110   ">
+        <div  class="z-10 row-start-2 xl:row-start-3 xl:col-span-4 xl:col-start-3 xl:transform xl:scale-110">
         <FluidImage imageName="img1.jpg"/>
         </div>
 
@@ -49,13 +61,13 @@ const IndexPage = () => (
             width: 100%;
             transform: translateY(-1rem);
           }
-        `, `z-20 font-montserrat text-4xl mt-4 lg:text-5xl lg:row-start-4 lg:col-span-2 lg:col-start-6 scale-125 lg:bg-white`
+        `, `z-20 font-montserrat text-4xl mt-4 xl:text-5xl xl:row-start-4 xl:col-span-2 xl:col-start-6 xl:bg-white`
           )}
           
         >
         consectetur adipiscing elit.
         </p>
-        <div   class="lg:col-span-3 lg:col-start-6 lg:row-start-3">
+        <div class="xl:col-span-3 xl:col-start-6 xl:row-start-3">
           <FluidImage imageName="img2.jpg" />
         </div>
       </div>
@@ -63,15 +75,15 @@ const IndexPage = () => (
 
     <div style={{backgroundColor: '#9DAF94'}} class="p-4 xl:py-36 py-24 relative">
 
-      <div class="invisible xl:visible absolute top-0 left-0 text-white text-9xl">+</div>
+      <div class="hidden xl:block absolute top-0 left-0 text-white text-9xl">+</div>
       <div class="absolute  top-0 right-0 text-white text-9xl">+</div>
-      <div class="invisible absolute xl:visible bottom-0 left-0 text-white text-9xl">+</div>
-      <div class="invisible absolute xl:visible bottom-0 right-0 text-white text-9xl">+</div>
+      <div class="hidden absolute xl:block bottom-0 left-0 text-white text-9xl">+</div>
+      <div class="hidden absolute xl:block bottom-0 right-0 text-white text-9xl">+</div>
 
       
       <div class="xl:mx-20">
         
-        <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-7xl border-2">
+        <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-6xl border-2">
           <p class="">Helvetica</p>
           <div class="">Menu</div>
         </div>
