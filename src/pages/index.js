@@ -54,7 +54,7 @@ const IndexPage = () => (
         <FluidImage imageName="img1.jpg"/>
         </div>
 
-        <p  data-sal="zoom-in" data-sal-duration="1000"  class={cx(css`
+        <p  data-sal="slide-up  " data-sal-duration="1000"  class={cx(css`
           :after {
             display: inline-block;
             content: "";
@@ -80,8 +80,6 @@ const IndexPage = () => (
         <div class="hidden absolute xl:block bottom-0 left-0 text-white text-9xl mx-4">+</div>
         <div class="hidden absolute xl:block bottom-0 right-0 text-white text-9xl mx-4">+</div>
 
-
-      
       <div class="xl:px-20">
         
         <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-6xl border-2">
@@ -115,6 +113,38 @@ const IndexPage = () => (
       </div>
     </div>
     
+    <div class="p-4 py-24 xl:p-40 font-montserrat">
+      <div class="grid justify-center grid-cols-2 items-center">
+        <div>
+          <FluidImage imageName="cafe.jpg" />
+        </div>
+        <div class="p-4 xl:p-20 ">
+          <p>We can be found at 4 Privet Drive, Watford WD25 7LR.</p>
+          <a href="" class="underline">See on Google Maps</a>
+          <p class="mt-4">+44 7700 900796</p>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="w-screen max-w-full text-center">
+      
+      <div class="p-4 inline-block font-serif text-3xl">
+            <p class="">Helvetica</p>
+            <div class="">Standard</div>
+      </div>
+
+      <div class="self">
+
+      </div>
+      
+
+
+    </div>
+
+
+
   </ Layout>
   
 )
