@@ -30,30 +30,31 @@ const IndexPage = () => (
       <FluidImage class="absolute" imageName="front.jpg" style={{height: "100vh", }}>
       </FluidImage>
       
-      <div class="text-right absolute z-10 top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2">
-        <h1>
-          <span class="block mb-3 font-serif text-5xl xl:text-9xl ">HELVETICA</span>
-          <span class="block font-serif text-5xl xl:text-9xl ">STANDARD</span>
+      <div style={{color: "#edeae4"}} class="text-center absolute z-10 top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2">
+        <h1 class="font-serif tracking-widest text-5xl xl:text-9xl">
+          <span class="block mb-3  ">HELVETICA</span>
+          <span class="block">STANDARD</span>
         </h1>
       </div>
     </div>
     
-    <div class="relative p-4 my-20 ">
-      <div class="xl:w-3/4 xl:mx-auto h-full grid grid-cols-1 xl:grid-cols-8 ">
-        <div data-sal="slide-up" data-sal-duration="1000" class="xl:col-span-4 xl:col-start-2 z-20 xl:bg-white xl:p-8">
-          <p class="z-20 text-2xl font-serif xl:text-4xl mb-1">
-            Excepteur sint occaecat cupidatat non proident
-          </p>
-          <p class="font-montseratt xl:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
+    <div style={{backgroundColor: '#dbd5c9', color: '#504942'}} class="px-4 xl:px-40 relative py-20 font-serif ">
+      <div data-sal="slide-right" data-sal-duration="1000" style={{color: "#acacac"}} class="text-5xl xl:text-9xl">
+       Lorem ipsum dolor sit amet, consectetur
+      </div>
+
+      <div class="h-full grid grid-cols-1 xl:grid-cols-8 ">
+        <div data-sal="slide-right" data-sal-duration="1000" class="xl:col-span-4 xl:col-start-1 z-20 xl:p-8">
+          <p class="z-20 text-2xl xl:text-4xl mb-1 ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiulgod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...
           </p>
         </div>
 
-        <div  class="z-10 row-start-2 xl:row-start-3 xl:col-span-4 xl:col-start-3 xl:transform xl:scale-110">
+        <div class="z-10 row-start-2 xl:row-start-3 xl:col-span-4 xl:col-start-3 xl:transform xl:scale-125">
         <FluidImage imageName="img1.jpg"/>
         </div>
 
-        <p  data-sal="slide-up" data-sal-duration="1000" class={cx(css`
+        <p  data-sal="zoom-in" data-sal-duration="1000"  class={cx(css`
           :after {
             display: inline-block;
             content: "";
@@ -61,7 +62,7 @@ const IndexPage = () => (
             width: 100%;
             transform: translateY(-1rem);
           }
-        `, `z-20 font-montserrat text-4xl mt-4 xl:text-5xl xl:row-start-4 xl:col-span-2 xl:col-start-6 xl:bg-white`
+        `, `z-20 text-4xl mt-4 xl:text-5xl xl:row-start-4 xl:col-span-2 xl:col-start-6 `
           )}
           
         >
@@ -73,15 +74,15 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div style={{backgroundColor: '#9DAF94'}} class="p-4 xl:py-36 py-24 relative">
+    <div style={{backgroundColor: '#1d1f1e'}} class="p-4 xl:py-36 py-24 relative">
+        <div class="hidden xl:block absolute top-0 left-0 text-white text-9xl mx-4">+</div>
+        <div class="absolute  top-0 right-0 text-white text-9xl mx-4">+</div>
+        <div class="hidden absolute xl:block bottom-0 left-0 text-white text-9xl mx-4">+</div>
+        <div class="hidden absolute xl:block bottom-0 right-0 text-white text-9xl mx-4">+</div>
 
-      <div class="hidden xl:block absolute top-0 left-0 text-white text-9xl">+</div>
-      <div class="absolute  top-0 right-0 text-white text-9xl">+</div>
-      <div class="hidden absolute xl:block bottom-0 left-0 text-white text-9xl">+</div>
-      <div class="hidden absolute xl:block bottom-0 right-0 text-white text-9xl">+</div>
 
       
-      <div class="xl:mx-20">
+      <div class="xl:px-20">
         
         <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-6xl border-2">
           <p class="">Helvetica</p>
@@ -113,6 +114,7 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
+    
   </ Layout>
   
 )
