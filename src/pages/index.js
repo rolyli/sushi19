@@ -128,20 +128,36 @@ const IndexPage = () => (
 
     </div>
 
-    <div class="w-screen max-w-full text-center">
-      
-      <div class="p-4 inline-block font-serif text-3xl">
-            <p class="">Helvetica</p>
-            <div class="">Standard</div>
-      </div>
-
-      <div class="self">
-
-      </div>
-      
-
-
+    <div class="text-center grid grid-cols-1 lg:grid-cols-2 xl:divide-x xl:grid-cols-3 p-4 font-montserrat">
+          <div class="p-6">
+            <div>
+              <p>Download our menu</p>
+            </div>
+            <div>
+              <p>Questions & Answers</p>
+            </div>
+            <div>
+              <p>Where to find us</p>
+            </div>
+            <div>
+              <p>Data Privacy Statement</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p>Keep up with Helvetica Standard</p>
+            <form>
+              <input type="text" class="border-2 p-4 m-2" value="Your email here" />
+              <input type="submit" class="p-4" value="Submit" />
+              </form>
+          </div>
+          <div>
+            <div class="p-4 inline-block text-3xl">
+              <p class="">Helvetica</p>
+              <p class="">Standard</p>
+            </div>
+          </div>
     </div>
+    
 
 
 

@@ -7,9 +7,11 @@ const NavbarEl = ({ children }) => {
 }
 
 const Navbar = () => {
+    
+
     return(
         <div class="fixed text-center p-4 w-screen max-w-full  z-20 w-100 text-white font-montserrat uppercase w-100  xl:tracking-widest">
-        <NavbarEl>Blog</NavbarEl>
+        <NavbarEl><a>Github</a></NavbarEl>
         <NavbarEl>About</NavbarEl>
         <NavbarEl>Menu</NavbarEl>
 
