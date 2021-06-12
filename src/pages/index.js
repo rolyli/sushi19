@@ -14,8 +14,8 @@ import Navbar from "../components/navbar"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Navbar />
     <div class="relative ">
-      <Navbar />
       <div
         class={css`
           content: "";
@@ -52,16 +52,14 @@ const IndexPage = () => (
         </h1>
       </div>
     </div>
-
     <div
+      id="about"
       style={{ backgroundColor: "#FFFFFF", color: "#69707d"}}
       class="px-4 xl:px-40 relative py-20 xl:pt-40 font-serif "
     >
 
       <div class=" h-full grid grid-cols-1 xl:grid-cols-8 ">
         <div
-          data-sal="slide-right"
-          data-sal-duration="1000"
           class="xl:col-span-4 xl:col-start-2 z-20 xl:p-1 bg-white"
         >
           <p class="inline-block z-10 text-2xl xl:text-6xl mb-1 ">
@@ -74,8 +72,6 @@ const IndexPage = () => (
         </div>
 
         <p
-          data-sal="slide-up  "
-          data-sal-duration="1000"
           class={cx(
             css`
               :after {
@@ -112,7 +108,7 @@ const IndexPage = () => (
         +
       </div>
 
-      <div class="xl:px-20">
+      <div id="menu" class="xl:px-20">
         <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-6xl border-2">
           <p class="">Helvetica</p>
           <div class="">Menu</div>
@@ -167,7 +163,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div class="p-4 py-24 xl:p-40 font-montserrat">
+    <div id="contact" class="p-4 py-24 xl:p-40 font-montserrat">
       <div class="grid justify-center grid-cols-2 items-center">
         <div>
           <FluidImage imageName="cafe.jpg" />
