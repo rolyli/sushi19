@@ -1,16 +1,32 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styled from "@emotion/styled"
 import { jsx, css, keyframes } from "@emotion/react"
 import gsap from "gsap"
 import ScrollToPlugin from "gsap/ScrollToPlugin"
-import { TweenMax } from "gsap";
-
-gsap.registerPlugin(ScrollToPlugin)
+import ScrollTrigger from "gsap/ScrollTrigger"
+import { TweenMax } from "gsap"
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false)
   const [isFirstPress, setFirstPress] = useState(true)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin)
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to("#navbar", {
+      scrollTrigger: {
+        start: "top center",
+        end: "top top",
+        scrub: true,
+
+        trigger: "#about",
+        markers: true,
+      },
+      y: 73.2,
+      position: "fixed",
+    })
+  }, [])
 
   const handleClick = () => {
     setFirstPress(false)
@@ -28,9 +44,9 @@ const Navbar = () => {
     <div
       css={css`
         position: fixed;
-        z-index: 50;
         margin: 1rem;
         cursor: pointer;
+        z-index: 50;
       `}
       onClick={handleClick}
     >
@@ -55,8 +71,8 @@ const Navbar = () => {
         `}
         onClick={() => {
           if (props.to) {
-          TweenMax.to(window, { duration: 1, scrollTo: `#${props.to}` })
-          setOpen(!open)
+            TweenMax.to(window, { duration: 1, scrollTo: `#${props.to}` })
+            setOpen(!open)
           }
         }}
       >
@@ -93,7 +109,20 @@ const Navbar = () => {
         `,
       ]}
     >
-      <BurgerMenu />
+      <div>
+        <div
+          id="navbar"
+          css={css`
+            width: 100%;
+            height: 73.2px;
+            top: -73.2px;
+            position: fixed;
+            background-color: black;
+            opacity: 80%;
+          `}
+        ></div>
+        <BurgerMenu />
+      </div>
       <div
         css={[
           css`
@@ -124,10 +153,18 @@ const Navbar = () => {
             transform: translate(-50%, -50%);
           `}
         >
-          <MenuEl to="about" margin="25">About</MenuEl>
-          <MenuEl to="menu" margin="30">Menu</MenuEl>
-          <MenuEl to="contact" margin="35">Contacts</MenuEl>
-          <MenuEl margin="25"><a href="https://github.com/rolyli/helvetica-standard">Github</a></MenuEl>
+          <MenuEl to="about" margin="25">
+            About
+          </MenuEl>
+          <MenuEl to="menu" margin="30">
+            Menu
+          </MenuEl>
+          <MenuEl to="contact" margin="35">
+            Contacts
+          </MenuEl>
+          <MenuEl margin="25">
+            <a href="https://github.com/rolyli/helvetica-standard">Github</a>
+          </MenuEl>
         </div>
       </div>
     </div>
