@@ -19,9 +19,7 @@ const Navbar = () => {
         start: "top center",
         end: "top top",
         scrub: true,
-
         trigger: "#about",
-        markers: true,
       },
       y: 73.2,
       position: "fixed",
