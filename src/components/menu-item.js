@@ -4,12 +4,12 @@ import { css, cx } from '@emotion/css'
 
 const MenuItem = ({item1, item2, price, className, vegan}) => {
     return (
-    <div class={`${className}`}>
-        <div class="font-montserrat text-white text-left text-lg mb-2 uppercase">
+    <div style={{color: "#333"}} class={`${className}`}>
+        <div class="font-montserrat text-left text-lg mb-2 uppercase">
             <span class="float-left">{item1} {vegan && '(v)'}</span>
             <span class='float-right'>£{price}</span>
         </div>
-        <div class="font-montserrat text-white text-left text-lg mb-6">
+        <div class="font-montserrat text-left text-lg mb-6">
             <br/>
             {item2}
         </div>
@@ -18,7 +18,7 @@ const MenuItem = ({item1, item2, price, className, vegan}) => {
 
 const MenuEl = ({ className, item1, price }) => {
     return (
-        <div class="font-montserrat text-white text-left text-lg mb-2 xl:mr-20 uppercase">
+        <div style={{color: "#ac9377"}} class="font-montserrat text-white text-left text-lg mb-2 xl:mr-20 uppercase">
             <span class="float-left">{item1}</span>
             <span class='float-right'>£{price}</span>
             <br/>
@@ -31,7 +31,8 @@ const MenuEl = ({ className, item1, price }) => {
 
 const MenuTitle = ({title, className, children}) => {
     return (
-        <div className={cx(`${className} font-serif text-white text-center text-5xl mb-12 `, css`
+        <div className={cx(`${className} font-serif text-center text-5xl mb-12 `, css`
+            color: #ac9377;
             :before,
             :after {
                 display: inline-block;
@@ -47,9 +48,9 @@ const MenuTitle = ({title, className, children}) => {
     )
 }
 
-const MenuSubtitle = ({subtitle, className}) => {
+const MenuSubtitle = ({subtitle, className, color}) => {
     return (
-        <div class={`${className} font-serif text-white text-3xl mb-4`}>
+        <div style={{color: color || "#ac9377"}} class={`${className} font-serif text-3xl mb-4`}>
             {subtitle}
         </div>
     )

@@ -16,9 +16,10 @@ const Navbar = () => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to("#navbar", {
       scrollTrigger: {
-        start: "top center",
+        start: "top top",
         end: "top top",
         scrub: true,
+        duration: 2,
         trigger: "#about",
       },
       y: 73.2,
@@ -58,11 +59,19 @@ const Navbar = () => {
     return (
       <div
         css={css`
-          margin-left: ${props.margin}vw;
-          font-family: lora;
-          font-size: 7rem;
-          color: white;
-          cursor: pointer;
+          & {
+            margin-left: ${props.margin}vw;
+            font-family: lora;
+            font-size: 7rem;
+            color: #395442;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+          }
+          
+          &:hover {
+            transform: scale(1.05)
+          }
+
           @media screen and (max-width: 1000px) {
             font-size: 3rem;
           }
@@ -128,7 +137,7 @@ const Navbar = () => {
             position: fixed;
             height: 100vh;
             top: -100vh;
-            background-color: #0f0f0f;
+            background-color: #e3e1d2;
             transition: transform 1s;
           `,
           isOpen &&
@@ -146,21 +155,20 @@ const Navbar = () => {
           css={css`
             position: absolute;
 
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 10%;
+            top: 10%;
           `}
         >
-          <MenuEl to="about" margin="25">
-            About
+          <MenuEl to="about" margin="0">
+            About ->
           </MenuEl>
-          <MenuEl to="menu" margin="30">
-            Menu
+          <MenuEl to="menu" margin="0">
+            Menu ->
           </MenuEl>
-          <MenuEl to="contact" margin="35">
-            Contacts
+          <MenuEl to="contact" margin="0">
+            Contacts ->
           </MenuEl>
-          <MenuEl margin="25">
+          <MenuEl margin="0">
             <a href="https://github.com/rolyli/helvetica-standard">Github</a>
           </MenuEl>
         </div>

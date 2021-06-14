@@ -52,21 +52,43 @@ const IndexPage = () => (
         </h1>
       </div>
     </div>
+
     <div
       id="about"
-      style={{ backgroundColor: "#FFFFFF", color: "#69707d"}}
-      class="px-4 xl:px-40 relative py-20 xl:pt-40 font-serif "
+      style={{ color: "#69707d" }}
+      class={cx(
+        "px-4 xl:px-40 relative py-10 xl:pt-20 font-serif relative",
+        css`
+          &:before {
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 92.5%;
+            background-color: #ac9377;
+            content: "";
+            z-index: -1;
+          }
+
+          @media (max-width: 1280px) {
+            &:before {
+              content: none;
+            }
+          }
+        `
+      )}
     >
+      <div
+        style={{ color: "#395442" }}
+        class="text-2xl xl:text-4xl xl:mb-32 xl:px-60 xl:pl-40 font-montserrat"
+      >
+        Our Venue
+        <p class="xl:text-xl">
+          With cosy architecture that is designed for everyone, Helvetica
+          Standard is a place for people who are looking for something special.
+        </p>
+      </div>
 
       <div class=" h-full grid grid-cols-1 xl:grid-cols-8 ">
-        <div
-          class="xl:col-span-4 xl:col-start-2 z-20 xl:p-1 bg-white"
-        >
-          <p class="inline-block z-10 text-2xl xl:text-6xl mb-1 ">
-            Coffee + Stories = Helvetica Standard
-          </p>
-        </div>
-
         <div class="z-10 row-start-2 xl:row-start-3 xl:col-span-4 xl:col-start-3 xl:transform xl:scale-125">
           <FluidImage imageName="img1.jpg" />
         </div>
@@ -82,21 +104,18 @@ const IndexPage = () => (
                 transform: translateY(-1rem);
               }
             `,
-            `bg-white z-20 text-4xl mt-4 xl:text-5xl xl:row-start-4 xl:p-2 xl:col-span-2 xl:col-start-6 `
+            `z-20 text-4xl mt-4 xl:text-5xl xl:row-start-4 xl:p-2 xl:col-span-2 xl:col-start-6 `
           )}
         >
           What stories do you need to tell today?
         </p>
-        <div class="xl:col-span-3 xl:col-start-6 xl:row-start-3">
+        <div class="mt-4 xl:col-span-3 xl:col-start-6 xl:row-start-3">
           <FluidImage imageName="img2.jpg" />
         </div>
       </div>
     </div>
 
-    <div
-      style={{ backgroundColor: "#1d1f1e" }}
-      class="p-4 xl:py-36 py-24 relative"
-    >
+    <div class="relative">
       <div class="hidden xl:block absolute top-0 left-0 text-white text-9xl mx-4">
         +
       </div>
@@ -108,14 +127,22 @@ const IndexPage = () => (
         +
       </div>
 
-      <div id="menu" class="xl:px-20">
-        <div class="p-4 inline-block my-10 xl:mb-15 text-white font-serif text-6xl border-2">
-          <p class="">Helvetica</p>
-          <div class="">Menu</div>
-        </div>
+      <div id="menu">
+        <div class="grid grid-cols-2 xl:grid-cols-6">
+          <div
+            style={{ backgroundColor: "#e3e1d2", color: "#395442" }}
+            class="p-4 inline-block py-10 font-serif text-6xl col-span-2 xl:pt-32 xl:pl-20"
+          >
+            <p class="">Helvetica</p>
+            <div class="">Menu</div>
+          </div>
 
-        <div class="grid grid-cols-1 xl:grid-cols-6 ">
-          <div class="xl:col-span-2">
+          <div style={{ backgroundColor: "#efece2" }} class="col-span-2 xl:col-span-4"></div>
+
+          <div
+            style={{ backgroundColor: "#e3e1d2" }}
+            class="p-4 col-span-2 xl:col-span-2 xl:p-20 xl:pt-10"
+          >
             <MenuSubtitle subtitle="Coffee" />
             <MenuEl price="2.30" item1="Cappucino" />
             <MenuEl price="2.20" item1="Latte" />
@@ -129,8 +156,11 @@ const IndexPage = () => (
             <MenuEl price="2.00" item1="Milk tea" />
           </div>
 
-          <div class="xl:col-span-4">
-            <MenuSubtitle subtitle="Brunch" />
+          <div
+            style={{ backgroundColor: "#efece2" }}
+            class="p-4 col-span-2 xl:col-span-4 xl:p-20 xl:pt-10"
+          >
+            <MenuSubtitle color="#333" subtitle="Brunch" />
             <MenuItem
               price="5.30"
               item1="Full Breakfast"
@@ -156,7 +186,6 @@ const IndexPage = () => (
               price="3.80"
               item1="Soups"
               item2="Tomato, French Onion, Carrot & Coreander, inquire about today's special. Served with artisan bread."
-
             />
           </div>
         </div>
@@ -164,11 +193,11 @@ const IndexPage = () => (
     </div>
 
     <div id="contact" class="p-4 py-24 xl:p-40 font-montserrat">
-      <div class="grid justify-center grid-cols-2 items-center">
+      <div class="grid justify-center grid-cols-1 xl:grid-cols-2 items-center">
         <div>
           <FluidImage imageName="cafe.jpg" />
         </div>
-        <div class="p-4 xl:p-20 ">
+        <div class="pt-4 xl:p-20 ">
           <p>We can be found at New Bridge St W, Newcastle-upon-tyne, NE18EF</p>
           <a href="" class="underline">
             See on Google Maps
@@ -201,7 +230,7 @@ const IndexPage = () => (
         </form>
       </div>
       <div>
-        <div class="p-4 inline-block text-3xl">
+        <div class="p-4 inline-block text-3xl font-serif">
           <p class="">Helvetica</p>
           <p class="">Standard</p>
         </div>
